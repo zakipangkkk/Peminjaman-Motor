@@ -13,11 +13,13 @@ return new class extends Migration
     {
         schema::create('motor', function(Blueprint $table){
             $table->id();
+            $table->foreignId('kategori_id')->constrained('kategori')->cascaseOnDelete();
             $table->string('nama_motor');
             $table->string('plat_nomor');
             $table->string('foto');
             $table->string('cc');
             $table->string('status');
+            $table->timestamps();
         });
     }
 

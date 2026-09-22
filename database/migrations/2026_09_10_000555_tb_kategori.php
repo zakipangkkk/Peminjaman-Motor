@@ -13,8 +13,9 @@ return new class extends Migration
     {
         schema::create('kategori',function(Blueprint $table){
             $table->id();
-            $table->foreignId('motor_id')->constrained('motor')->cascadeOnDelete();
             $table->string('nama_kategori');
+            $table->string('harga_per_hari');
+            $table->timestamps();
         });
     }
 

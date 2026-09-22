@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('booking_id')->constrained('booking')->cascadeOnDelete();
             $table->date('tanggal_kembali');
-            $table->decimal(denda);
+            $table->decimal('denda');
             $table->string('keterangan');
+            $table->string('status');   
         });
     }
 
