@@ -14,6 +14,14 @@
         <h1>Pelanggan</h1>
     </div>
 
+        <div class="topbar-right">
+
+        <a href="{{ route('admin.user.create') }}" class="btn">
+            + Data User
+        </a>
+
+    </div>
+
 </div>
 
 
@@ -64,7 +72,25 @@
                 <td>
                     {{ $item->updated_at?->format('d M Y') }}
                 </td>
+                                <td class="row-actions">
 
+<a href="{{ route('admin.user.edit', $item->id) }}">
+    Edit
+</a>
+
+<form action="{{ route('admin.user.destroy', $item->id) }}" method="POST">
+
+    @csrf
+    @method('DELETE')
+
+    <button type="submit"
+            onclick="return confirm('Yakin ingin menghapus motor ini?')">
+        Hapus
+    </button>
+
+</form>
+
+                </td>
             </tr>
 
         @endforeach

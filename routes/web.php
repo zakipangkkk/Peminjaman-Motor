@@ -7,6 +7,8 @@ use App\Http\Controllers\MotorController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\DashboardController;
+
 
 
 /*
@@ -56,11 +58,10 @@ Route::middleware('auth')
     ->name('admin.')
     ->group(function () {
 
-        // Dashboard
-        Route::get('/', function () {
-            return view('admin.index');
-        })->name('dashboard');
-
+        // Dashb
+        // Dashboard Admin
+        Route::get('/', [DashboardController::class, 'index'])
+            ->name('dashboard');
         // Motor
         Route::get('/motor', [MotorController::class, 'adminIndex'])
             ->name('motor.index');

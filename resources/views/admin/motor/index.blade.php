@@ -18,7 +18,7 @@
 
     <div class="topbar-right">
 
-        <a href="#" class="btn">
+        <a href="{{ route('admin.motor.create') }}" class="btn">
             + Tambah Motor
         </a>
 

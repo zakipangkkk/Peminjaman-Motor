@@ -97,7 +97,7 @@
 
                     <p class="avail">
 
-                        {{ $motor->tersedia
+                        {{ $motor->status
                             ? '✓ Tersedia sekarang'
                             : '✕ Sedang dipakai'
                         }}
@@ -107,7 +107,7 @@
                 </div>
 
 
-                @if ($motor->tersedia)
+                @if ($motor->status == 'tersedia')
 
                     <a href="#"
                        class="btn-primary">

@@ -11,18 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        schema::create('booking',function(Blueprint $table){
+        schema::create('log_aktivitas', function(Blueprint $table){
             $table->id();
             $table->foreignId('user_id')->constrained('user')->cascadeOnDelete();
-            $table->foreignId('motor_id')->constrained('motor')->cascadeOnDelete();
-            $table->date('tanggal_mulai');
-            $table->date('tanggal_selesai');
-            $table->enum('status',[
-                'pending',
-                'approved',
-                'rejected',
-                'completed'
-            ])->default('pending');
+            $table->str('aktivitas', 100);
+            $table->dateTime('waktu_aktivitas');
+            $table->ttimestamps();
         });
     }
 

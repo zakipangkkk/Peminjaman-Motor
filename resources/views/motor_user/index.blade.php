@@ -50,7 +50,8 @@
                 <div class="card-top">
 
                     <div class="motor-image">
-                        🏍️
+                     <img src="{{ asset('storage/app/public/motor/' . $motor->foto) }}"
+                        alt="{{ $motor->nama_motor }}">
                     </div>
 
                     @if (!$motor->tersedia)

@@ -36,7 +36,7 @@
         </div>
 
         <div class="value">
-            {{ $motorTersedia ?? 0 }}
+            {{ $motortersedia ?? 0 }}
         </div>
 
         <div class="delta">
@@ -101,9 +101,9 @@
             Penyewaan Terbaru
         </h2>
 
-        <a href="{{ route('admin.booking.index') }}" class="link">
+        {{-- <a href="{{ route('admin.booking.index') }}" class="link">
             Lihat semua →
-        </a>
+        </a> --}}
 
     </div>
 
